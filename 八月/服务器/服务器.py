@@ -32,6 +32,7 @@ def servers():
             if res[0] == '1':
                 row = mysql_statement(
                     "select * from userinfo where user_name = '%s'and user_password='%s'" % (res[1], res[2]))
+                mysql_statement("update userinfo set ip = '%s' where user_name = '%s'" % (ip, res[1]))
                 if len(row) == 1:
                     all_userinfo = mysql_statement("select user_name, ip, nickname from userinfo")
                     json_all = json.dumps(['登录成功', all_userinfo])

@@ -20,7 +20,7 @@ def fun2():
             for i in a[1]:
                 sheet.append(i)
             print(a)
-            wb.save(r'存储信息\信息.xlsx')
+            wb.save(r'用户信息\信息.xlsx')
             m.askyesno('提示', a[0])
             tk.destroy()
             for i in a[1]:
